@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+        @font-face {
+    font-family: 'Orbit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+        }
+
+    @font-face {
+    font-family: 'CloudSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CloudSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CloudSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+h1, p, h2 {
+    color: white;
+    font-family: 'CloudSans';
+}
+
+body{
+    background-color: black;
+    margin-top: 5rem;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #e8e8e8;
+}
+header{
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    margin: 0;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction: column;
+    scroll-margin-top: 75px;
+
+    
+}
+
+.info_text {
+    margin: 3rem;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+}
+
+h2 {
+    margin: 3rem;
+    font-size: 2rem;
+    display: flex;
+    
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    background-color: black;
+    border-bottom: 1px solid var(--border);
+}
+
+.wrap {
+    width: min(100%, 1040px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.menuLogo {
+    font-family: 'CloudSans';
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.13px;
+    margin: 3rem;
+    color: grey;
+}
+
+li{
+    display: list-item;
+    unicode-bidi: isolate;
+    list-style: none;
+}
+
+ul{
+    display: block;
+    margin-block-start: 15px;
+    margin-block-end: 15px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+
+li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: grey;
+    font-size: 13px;
+}
+
+.menu-list {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    font-family: 'CloudSans';
+    color: rgb(73, 73, 73);
+}
+
+
+h1 span {
+    color: rgb(123, 116, 216);
+}
+    </style>
+</head>
+
+<body>
+    <!-- 메뉴 리스트 -->
+    <div class="main-content">
+        <header class="header">
+            <nav>
+                <div class="wrap">
+                <span class="menuLogo">aden.kr</span>
+                <ul class="menu-list">
+                    <li> <a href="#intro">Intro</a></li>
+                    <li><a href=#>About</a></li>
+                    <li><a href=#>Projects</a></li>
+                    <li><a href=#>Contacts</a></li>
+                    
+                </ul>
+                </div>
+            </nav>
+        </header>
+<!--첫번째 페이지-->
+    <div class="container">
+        <section class="page" id="intro">
+            <div class="info_text">
+                <h1>Hello, <br> I am <span>Aden</span>, <br>Web Developer</h1>
+                <p>안녕하세요, 취미로 웹 개발을 하는 aden 입니다.</p>
+            </div>
+        </section>
+    </div>
+        <!--두번째 페이지-->
+        <section class="page" id="About">
+            <h2> About</h2>
+           
+        </section>
+
+
+    
+
+    
+    </div>
+
+    
+    
+</body>
+</html>
