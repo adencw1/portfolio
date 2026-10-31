@@ -3,197 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPPY BIRTHDAY</title>
-</head>
-<style>
-   * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    <title>portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <style>
+        @font-face {
+    font-family: 'Orbit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+        }
+
+    @font-face {
+    font-family: 'CloudSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CloudSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CloudSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+h1, p, h2 {
+    color: white;
+    font-family: 'Pretendard', sans-serif;
+}
+
+body{
+    background-color: black;
+    margin-top: 5rem;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #e8e8e8;
+}
+header{
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    margin: 0;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction: column;
+    scroll-margin-top: 75px;
+
     
-    }
+}
 
-    body {
-        color:rgb(51, 53, 54);
-        background-color:rgb(255, 255, 255);
-        font-family:Arial, Helvetica, sans-serif;
-        font-style:normal;
-        overflow:hidden;
-        font: weight 500px;
-        font-optical-sizing: auto;
-    }
+.info_text {
+    margin: 3rem;
+    font-size: 2rem;
+}
 
-    .box-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+p {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+}
 
-    .firework_btn {
-        position: absolute;
-        top: 56%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 10px 10px;
-        font-size: 18px;
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-    }
-
-    .firework_btn:hover {
-        transform: translate(-50%, -50%) scale(1.2);
-        animation: firework_btn_animation 0.5s ease-in-out forwards;
+h2 {
+    margin: 3rem;
+    font-size: 2rem;
+    display: flex;
     
-    }
+}
 
-    @keyframes firework_btn_animation {
-        0% {
-            transform: translate(-50%, -50%) scale(1);
-        }
-        25% {
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        50% {
-            transform: translate(-50%, -50%) scale(1.3);
-        }
-    }
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index:999;
+    background-color: black;
+    border-bottom: 1px solid var(--border);
+}
+
+.wrap {
+    width: min(100%, 97%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.menuLogo {
+    font-family: 'CloudSans';
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.13px;
+    margin: 3rem;
+    color: grey;
+}
+
+li{
+    display: list-item;
+    unicode-bidi: isolate;
+    list-style: none;
+}
+
+ul{
+    display: block;
+    margin-block-start: 15px;
+    margin-block-end: 15px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+
+li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: grey;
+    font-size: 13px;
+}
+
+.menu-list {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    font-family: 'CloudSans';
+    color: rgb(73, 73, 73);
+}
+
+
+h1 span {
+    color: rgb(123, 116, 216);
+}
+
+.box_ct{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgb(73, 73, 73);
+    padding: 1rem;
+    margin: 1rem;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(123, 116, 216);
+    transform: translate(500px, 50%);
+}
+
+
+
+.box_ab {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgb(73, 73, 73);
+    padding: 2rem;
+    margin: 1rem;
+    
+    
+    display: block;
+    clear: both;
+    margin-left: 25vw;
+    margin-right: 0;
+    
     
 
-    .sentence_text {
-        font-size: 15px;
-        font-weight: 500;
-        color: rgb(51, 53, 54);
-        margin-top: 7px;
-    }
+}
+h2{
     
-    section {
-        position: relative;
-        width: 100%;
-        height: 90vh;
-        overflow: hidden;
-    }
+    display: flex;
+    position: absolute;
+    
+    box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    transform: translate(50%);
+    
 
-    #petal-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
+}
 
-    .petal {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: rgb(247, 208, 215);
-        border-radius: 0 40px;
-        animation: fall linear infinite;
-        cursor: pointer;
-        top: -50px;
-        opacity: 0.8;
-        transform: rotate(45deg);
-    }
 
-    @keyframes fall {
-        0% {
-            transform: translateY(0) rotate(0deg);
-        }
-        100% {
-            transform: translateY(110vh) rotate(360deg);
-        }
-    }
 
-    @keyframes slide-up {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .click_text {
-        font-size: 12px;
-        font-weight: 500;
-        color: rgb(184, 148, 163);
-        margin-top: 7px;
-        animation: fadeIn 3s ease-in-out;
-        transform: translateY(45px);
-        opacity: 0;
-        font-style: italic;
-        font-family: a href="https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2";
-    }
-
-    @keyframes red-color-animation {
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
-        
-    }
-
-    .red-color {
-        animation: red-color-animation 2s infinite alternate;
-    }
     </style>
+</head>
+
 <body>
-    <section>
-        <div id="petal-container"></div>
-        <div class="box-text">
-            <h1 class="congratul_text">생일 축하해</h1>
-            <p class="sentence_text">HAPPY BIRTHDAY!</p>
-            <p class="click_text">Click The Firecracker</p>
-        </div>
-        <button class="firework_btn">🎉</button>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script>
-        const container = document.getElementById('petal-container');
-        const button = document.querySelector('.firework_btn');
+    <!-- 메뉴 리스트 -->
+    <div class="main-content">
+        <header class="header">
+            <nav>
+                <div class="wrap">
+                <span class="menuLogo">aden.kr</span>
+                <ul class="menu-list">
+                    <li> <a href="#intro">Intro</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Contacts">Contacts</a></li>
+                    
+                </ul>
+                </div>
+            </nav>
+        </header>
+<!--첫번째 페이지-->
+    <div class="container">
+        <section class="page" id="intro">
+            <div class="info_text">
+                <h1>Hello, <br> I am <span>Aden</span>, <br>Web Developer</h1>
+                <p>안녕하세요, 취미로 웹 개발을 하는 aden 입니다.</p>
+            </div>
+        </section>
+    </div>
+        <!--두번째 페이지-->
+        <section class="page" id="About">
+            <h2> About</h2>
+            <div class="box">
+            <p class="box_ab">Python, JavaScript, HTML, CSS을 다룹니다. <br>다양한 프로그래밍 언어들을 접목시켜 최상의 결과를 만드려 노력합니다.</p>
+            <p class="box_ab">취미로 시작한 개발이 앞 길을 펼쳐줍니다. <br>웹 개발 및 사이버 보안의 분야에서의 활동을 목표로 합니다</p>
+            <p class="box_ab">일상생활과 관련된 개발을 합니다.<br>실생활에서 실제로 사용할 수 있는 범위에서 개발을 합니다.</p>
+            </div>
+        </section>
+        <!-- 세번째 페이지 -->
+        <section class="page" id="Projects">
+            <h2> Projects</h2>
+            <div class="box">
+                <p class="box_pj">생일 축하 폭죽 </p>
+                <p class="box_pj">python math 모듈을 이용한 드로잉</p>
+                <p class="box_pj">미니 해커톤</p>
+            </div>
+        </section>
+        <!-- 네번째 페이지 -->
+        <section class="page" id="Contacts">
+            <h2> Contacts</h2>
+            <div class="box">
+                <p class="box_ct"><a href="mailto:adencw1@gmail.com" class="link-row" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i>adencw1@gmail.com</a></p>
+                <p class="box_ct" ><a href="https://github.com/adencw1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i>adencw1</a></p>
+                <p class="box_ct"><a href="https://instagram.com/delnvne.o" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i>delnvne.o</a></p>
+            </div>
+        </section>
+    </div>
 
-        function createPetal() {
-            const petal = document.createElement('div');
-            petal.classList.add('petal');
-            container.appendChild(petal);
+    </div>
 
-            petal.style.left = Math.random() * window.innerWidth + 'px';
-            petal.style.animationDuration = (Math.random() * 3 + 5) + 's';
-            petal.style.opacity = String(Math.random() * 0.5 + 0.5);
-            petal.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
-
-            setTimeout(() => {
-                petal.remove();
-            }, 5000);
-        }
-
-        setInterval(createPetal, 300);
-
-        button.addEventListener('click', () => {
-            confetti({
-                particleCount: 100,
-                spread: 120,
-                origin: { y: 0.53 },
-                startVelocity: 45,
-                ticks: 60,
-            });
-        });
-
-        const clickText = document.querySelector(".click_text");
-
-        setInterval(function() {
-            clickText.classList.toggle("red-color", { behavior: 'smooth' });
-        }, 300);
-
-        const fireworkBtn = document.querySelector('.firework_btn');
-        </script>
+    
+    
 </body>
 </html>
