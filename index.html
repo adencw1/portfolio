@@ -116,6 +116,8 @@ h1, p, h2 {
     font-family: 'Pretendard', sans-serif;
 }
 
+
+
 body{
     background-color: black;
     margin-top: 5rem;
@@ -129,6 +131,8 @@ header{
     box-sizing: border-box;
     position: fixed;
     margin: 0;
+    display: inline-block;
+    
 }
 
 .page {
@@ -147,17 +151,20 @@ header{
 .info_text {
     margin: 3rem;
     font-size: 2rem;
+    
 }
 
 p {
     font-size: 1.2rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 h2 {
-    margin: 3rem;
+    
     font-size: 2rem;
-    display: flex;
+    
+
+    
     
 }
 
@@ -174,6 +181,7 @@ nav {
     z-index:999;
     background-color: black;
     border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
 }
 
 .wrap {
@@ -226,41 +234,86 @@ li a {
 
 h1 span {
     color: rgb(123, 116, 216);
+    text-shadow: 0px 0px 8px rgb(123, 116, 216);
+    font-style: italic;
 }
 
-.box_ct{
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 100%;
-    border: 1px solid rgb(73, 73, 73);
-    padding: 1rem;
-    margin: 1rem;
-    align-items: center;
+
+.box_ct {
     text-align: center;
-    text-decoration: none;
-    color: rgb(123, 116, 216);
-    transform: translate(500px, 50%);
-}
-
-
-
-.box_ab {
     box-sizing: border-box;
-    width: 100%;
     border: 1px solid rgb(73, 73, 73);
-    padding: 2rem;
+    padding: 15px;
     margin: 1rem;
-    
-    
+    color: rgb(123, 116, 216);
+    transform: translate(26vw, 10rem);
     display: block;
     clear: both;
-    margin-left: 25vw;
+    margin-left: 21vw;
     margin-right: 0;
+    overflow: hidden;
+
+}
+
+
+
+/* 1. 전체 섹션을 화면 정중앙에 배치 */
+#box_about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* 가로 기준 정중앙 정렬 */
+  justify-content: center;  /* 세로 기준 정중앙 정렬 */
+  width: 100%;
+  margin: 0 auto;           /* 화면 전체의 한가운데로 고정 */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+/* 2. 박스들을 감싸는 그룹 */
+#box_about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* 박스들의 기준점을 정중앙으로 맞춤 */
+  margin-top: 150px;             /* 박스 사이의 상하 간격 */
+  width: 100%;
+  max-width: 600px;         /* 박스 그룹 전체의 최대 너비 설정 */
+}
+
+/* 3. 개별 박스 공통 스타일 */
+.box_ab  {
+  width: 100%;
+  max-width: 600px;         /* 각 박스의 기본 너비 */
+  padding: 15px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 13px;      /* 박스 사이의 간격 */
+}
+
+/* 4. 지그재그 디자인 (transform을 쓰면 중앙 정렬이 깨지지 않음) */
+.box_ab:nth-child(1) {
+  transform: translateX(-40px); /* 왼쪽으로 살짝 튀어나옴 */
+}
+
+.box_ab:nth-child(2) {
+  transform: translateX(40px);  /* 오른쪽으로 살짝 튀어나옴 */
+}
+
+.box_ab:nth-child(3) {
+  transform: translateX(-20px); /* 왼쪽으로 살짝 튀어나옴 */
+}
     
     
 
-}
+
+
+
 h2{
     
     display: flex;
@@ -276,6 +329,131 @@ h2{
 }
 
 
+
+
+/* 만약 페이지 전체에서 세로/가로 모두 정중앙에 배치하고 싶다면 */
+
+
+.project-section {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 가로 기준 무조건 정중앙 정렬 */
+  align-items: center;
+  padding: 50px 0;    
+  float:none; 
+  position: relative;    /* 위아래 적절한 여백 */
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 85%;
+  max-width: 650px;
+  margin: 120px auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 50vh;
+ 
+
+  
+  
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  border: 1px solid #333;
+  border-radius: 12px;
+  background-color: #111;
+}
+
+/* 트랙 애니메이션 */
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  cursor: grab;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+/* 개별 카드 */
+.carousel-item {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  user-select: none; /* 스와이프 시 텍스트 드래그 방지 */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  pointer-events: none; /* 이미지 드래그 방지 */
+}
+
+.item-description {
+  padding: 15px;
+  text-align: center;
+}
+
+.item-description h3 {
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+.item-description p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* 좌우 버튼 스타일 */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid #555;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+  margin: 0 -40px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.prev-btn {
+  left: -22px;
+}
+
+.next-btn {
+  right: -22px;
+}
+
+.project-section h2 {
+             
+  font-size: 2rem;      
+  color: #ffffff;        
+
+  
+}
 
     </style>
 </head>
@@ -309,20 +487,57 @@ h2{
         <!--두번째 페이지-->
         <section class="page" id="About">
             <h2> About</h2>
-            <div class="box">
+            <div class="box" id="box_about">
             <p class="box_ab">Python, JavaScript, HTML, CSS을 다룹니다. <br>다양한 프로그래밍 언어들을 접목시켜 최상의 결과를 만드려 노력합니다.</p>
-            <p class="box_ab">취미로 시작한 개발이 앞 길을 펼쳐줍니다. <br>웹 개발 및 사이버 보안의 분야에서의 활동을 목표로 합니다</p>
+            <p class="box_ab" id="sp">"I am dreaming" <br>웹 개발과 사이버 보안을 위해 꿈꾸고 있습니다.</p>
             <p class="box_ab">일상생활과 관련된 개발을 합니다.<br>실생활에서 실제로 사용할 수 있는 범위에서 개발을 합니다.</p>
             </div>
         </section>
         <!-- 세번째 페이지 -->
         <section class="page" id="Projects">
+            <section class="project-section"> 
             <h2> Projects</h2>
             <div class="box">
-                <p class="box_pj">생일 축하 폭죽 </p>
-                <p class="box_pj">python math 모듈을 이용한 드로잉</p>
-                <p class="box_pj">미니 해커톤</p>
-            </div>
+               
+            <div class="carousel-container">
+  <!-- 좌우 버튼 -->
+  <button class="carousel-btn prev-btn" aria-label="이전">&#10094;</button>
+  <button class="carousel-btn next-btn" aria-label="다음">&#10095;</button>
+
+  <!-- 캐러셀 트랙 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <!-- 프로젝트 카드 1 -->
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/600x350" alt="프로젝트 1 이미지">
+        <div class="item-description">
+          <h3>프로젝트 제목 1</h3>
+          <p>Python과 HTML/CSS를 활용한 반응형 웹사이트 구축 프로젝트입니다.</p>
+        </div>
+      </div>
+
+      <!-- 프로젝트 카드 2 -->
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/600x350" alt="프로젝트 2 이미지">
+        <div class="item-description">
+          <h3>프로젝트 제목 2</h3>
+          <p>JavaScript 및 보안 로직을 다룬 사이버 보안 대시보드 프로젝트입니다.</p>
+        </div>
+      </div>
+
+      <!-- 프로젝트 카드 3 -->
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/600x350" alt="프로젝트 3 이미지">
+        <div class="item-description">
+          <h3>프로젝트 제목 3</h3>
+          <p>실생활에서 실제로 활용할 수 있는 유용한 웹 애플리케이션입니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+    </div>
         </section>
         <!-- 네번째 페이지 -->
         <section class="page" id="Contacts">
@@ -337,7 +552,80 @@ h2{
 
     </div>
 
-    
+    <script>
+        const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentIndex = 0;
+const totalItems = items.length;
+
+// 캐러셀 위치 업뎃
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// 다음 , 이전 슬라이드 이동
+function moveToNext() {
+  currentIndex = (currentIndex + 1) % totalItems;
+  updateCarousel();
+}
+
+function moveToPrev() {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  updateCarousel();
+}
+
+// 버튼 클릭 
+nextBtn.addEventListener('click', moveToNext);
+prevBtn.addEventListener('click', moveToPrev);
+
+/* --- 스와이프 --- */
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+
+// 스와이프 시작
+function handleStart(e) {
+  isDragging = true;
+  startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+}
+
+// 스와이프 이동
+function handleMove(e) {
+  if (!isDragging) return;
+  currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+}
+
+// 스와이프 종료 및 인덱스 계산
+function handleEnd() {
+  if (!isDragging) return;
+  isDragging = false;
+  
+  const diffX = startX - currentX;
+  
+  // 50px 이상 쓸어넘겼을 때 슬라이드 이동
+  if (Math.abs(diffX) > 50) {
+    if (diffX > 0) {
+      moveToNext(); // 오른쪽에서 왼쪽으로 스와이프 -> 다음
+    } else {
+      moveToPrev(); // 왼쪽에서 오른쪽으로 스와이프 -> 이전
+    }
+  }
+}
+
+// 터치 이벤트 등록 
+track.addEventListener('touchstart', handleStart);
+track.addEventListener('touchmove', handleMove);
+track.addEventListener('touchend', handleEnd);
+
+// 마우스 드래그 이벤트
+track.addEventListener('mousedown', handleStart);
+track.addEventListener('mousemove', handleMove);
+track.addEventListener('mouseup', handleEnd);
+track.addEventListener('mouseleave', () => { isDragging = false; });
+    </script>
     
 </body>
 </html>
