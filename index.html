@@ -129,7 +129,7 @@ button:focus-visible {
 }
 
 .wrap {
-  max-width: 1000px;
+  max-width: 1448px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -189,11 +189,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   max-width: 1400px;
-  margin: 12px auto 0;
+  margin: 14px auto 0;
   padding: 10px 12px 10px 20px;
   border-radius: 999px;
   font-size: 12px;
-  width: min(100%, 97%);
+  width: calc(100% - 48px);
+  left: 50%;
+  transform: translateX(-50%);
+ 
 }
 
 nav b {
@@ -687,7 +690,7 @@ footer small {
 <body>
 <div class="bg" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="glow" id="glow"></div></div>
 
-<nav class="glass" style="margin-left:24px;margin-right:24px">
+<nav class="glass">
   <b>aden.kr</b>
   <div><a href="#growth">grow</a><a href="#skills">skills</a><a href="#projects">projects</a><a href="#contact">contact</a></div>
 </nav>
